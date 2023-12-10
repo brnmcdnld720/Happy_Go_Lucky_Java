@@ -45,7 +45,7 @@ public class Player extends Entity{
 		x = 100;
 		y = 100;
 		speed = 3;
-		animationFrameSpeed = 5; //ticks per animation frame
+		animationFrameSpeed = 7; //ticks per animation frame
 		animationCounter = 0;
 		animationFrame = 0;
 		direction = "down";
