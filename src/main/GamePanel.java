@@ -7,6 +7,7 @@ import java.awt.Graphics2D;
 
 import javax.swing.JPanel;
 
+import backgournd.BackgroundManager;
 import entity.Player;
 
 public class GamePanel extends JPanel implements Runnable{
@@ -23,15 +24,11 @@ public class GamePanel extends JPanel implements Runnable{
 	//FPS
 	int FPS = 60;
 	
-	
+	BackgroundManager backgroundManager = new BackgroundManager(this); 
 	KeyHandler keyH = new KeyHandler();
 	Thread gameThread;
 	Player player = new Player(this, keyH);
 	
-	//set player defaults
-	int playerX = 100;
-	int playerY = 100;
-	int playerSpeed = 4;
 	
 	public GamePanel() {
 		this.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
@@ -95,6 +92,8 @@ public class GamePanel extends JPanel implements Runnable{
 		super.paintComponent(g);
 		
 		Graphics2D g2 = (Graphics2D)g;
+		
+		backgroundManager.draw(g2);
 		
 		player.draw(g2);
 		

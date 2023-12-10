@@ -23,7 +23,6 @@ public class Entity {
 	public BufferedImage[] walk_left;
 	public BufferedImage spriteSheet;
 	
-	
 	public String direction;
 	
 	public BufferedImage importCharacterImage(String location) {
@@ -45,7 +44,7 @@ public class Entity {
 	}
 	
 	public BufferedImage scaleImage(BufferedImage originalImage, int sizeToScale) {
-		BufferedImage scaledImage = new BufferedImage(sizeToScale, sizeToScale, BufferedImage.TYPE_INT_RGB);
+		BufferedImage scaledImage = new BufferedImage(sizeToScale, sizeToScale, BufferedImage.TYPE_INT_ARGB);
 		
 		Graphics2D g2d = scaledImage.createGraphics();
 		
