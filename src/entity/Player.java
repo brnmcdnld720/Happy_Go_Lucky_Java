@@ -56,19 +56,7 @@ public class Player extends Entity{
 		
 	}
 	
-	public BufferedImage scaleImage(BufferedImage originalImage) {
-		BufferedImage scaledImage = new BufferedImage(gp.tileSize, gp.tileSize, BufferedImage.TYPE_INT_RGB);
-		
-		Graphics2D g2d = scaledImage.createGraphics();
-		
-		Image scaled = originalImage.getScaledInstance(gp.tileSize, gp.tileSize, Image.SCALE_SMOOTH);
-		g2d.drawImage(scaled, 0, 0, null);
-		
-		g2d.dispose();
-		
-		return scaledImage;
 	
-	}
 	
 	public void loadAnimations() {
 		walk_down = new BufferedImage[8];
@@ -77,7 +65,7 @@ public class Player extends Entity{
 													0*gp.originalTileSize, 
 													gp.originalTileSize, 
 													gp.originalTileSize);
-			walk_down[i] = scaleImage(walk_down[i]);
+			walk_down[i] = scaleImage(walk_down[i], gp.tileSize);
 			
 		}
 		walk_up = new BufferedImage[8];
@@ -86,7 +74,7 @@ public class Player extends Entity{
 													1*gp.originalTileSize, 
 													gp.originalTileSize, 
 													gp.originalTileSize);
-			walk_up[i] = scaleImage(walk_up[i]);
+			walk_up[i] = scaleImage(walk_up[i], gp.tileSize);
 		}
 		walk_right = new BufferedImage[8];
 		for(int i = 0; i<walk_down.length; i++) {
@@ -94,7 +82,7 @@ public class Player extends Entity{
 													2*gp.originalTileSize, 
 													gp.originalTileSize, 
 													gp.originalTileSize);
-			walk_right[i] = scaleImage(walk_right[i]);
+			walk_right[i] = scaleImage(walk_right[i], gp.tileSize);
 		}
 		walk_left = new BufferedImage[8];
 		for(int i = 0; i<walk_down.length; i++) {
@@ -102,7 +90,7 @@ public class Player extends Entity{
 													3*gp.originalTileSize, 
 													gp.originalTileSize, 
 													gp.originalTileSize);
-			walk_left[i] = scaleImage(walk_left[i]);
+			walk_left[i] = scaleImage(walk_left[i], gp.tileSize);
 		}
 		
 	}

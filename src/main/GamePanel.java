@@ -41,6 +41,13 @@ public class GamePanel extends JPanel implements Runnable{
 		this.setFocusable(true);
 	}
 	
+	public int getTileSize() {
+		return tileSize;
+	}
+	public int getOriginalTileSize() {
+		return originalTileSize;
+	}
+	
 	public void startGameThread() {
 		
 		gameThread = new Thread(this);
